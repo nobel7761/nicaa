@@ -11,7 +11,17 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        draw: {
+          '0%': { strokeDashoffset: 4500 },
+          '100%': { strokeDashoffset: 0 },
+        },
+      },
+      animation: {
+        draw: 'draw 8s ease',
+      },
+    },
   },
   plugins: [],
 };

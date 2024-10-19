@@ -1,3 +1,5 @@
+import { SidebarProvider, SidebarTrigger } from '../components/shadcn/Sidebar';
+import { AppSidebar } from '../components/ui/AppSidebar';
 import Providers from '../lib/Providers';
 import './global.css';
 
@@ -14,7 +16,15 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          {/* <SidebarProvider>
+            <AppSidebar /> */}
+          <main>
+            {/* <SidebarTrigger /> */}
+            {children}
+          </main>
+          {/* </SidebarProvider> */}
+        </body>
       </html>
     </Providers>
   );

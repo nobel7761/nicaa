@@ -5,7 +5,8 @@
   "scripts": {
     "dev:frontend": "nx serve frontend",
     "dev:backend": "nx serve backend",
-    "dev": "concurrently \"yarn dev:frontend\" \"yarn dev:backend\""
+    "dev": "concurrently \"yarn dev:frontend\" \"yarn dev:backend\"",
+    "build": "nx run-many --all --target=build --prod"
   },
   "private": true,
   "dependencies": {

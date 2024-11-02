@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const InitialLoader = () => {
+const InitialLoader = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     // GSAP Animations
     gsap.fromTo(
@@ -13,6 +13,7 @@ const InitialLoader = () => {
         opacity: 0,
         duration: 1.5,
         delay: 3.5,
+        onComplete,
       }
     );
 
@@ -26,7 +27,7 @@ const InitialLoader = () => {
         delay: 0.5,
       }
     );
-  }, []); // Empty dependency array means this will run once when the component mounts
+  }, [onComplete]); // Empty dependency array means this will run once when the component mounts
   return (
     <div className="absolute top-0 left-0 h-[100%] w-[100%] flex flex-col gap-[1.5rem] justify-center items-center bg-[url('/background.jpg')] bg-cover bg-center loading-page">
       <svg

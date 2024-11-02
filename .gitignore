@@ -47,3 +47,8 @@ out
 
 # Environment Variable
 .env
+
+# Prisma
+prisma/*.db
+prisma/migrations/**/README.md
+prisma/.env

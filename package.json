@@ -5,7 +5,8 @@
   "scripts": {
     "dev:frontend": "nx serve frontend",
     "dev:backend": "nx serve backend",
-    "dev": "concurrently \"yarn dev:frontend\" \"yarn dev:backend\"",
+    "dev:studio": "yarn prisma studio",
+    "dev": "concurrently \"yarn dev:frontend\" \"yarn dev:backend\" \"yarn dev:studio\"",
     "build": "nx run-many --all --target=build --prod"
   },
   "private": true,
@@ -13,10 +14,12 @@
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
+    "@prisma/client": "^5.21.1",
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
     "gsap": "^3.12.5",
     "next": "14.2.3",
+    "prisma": "^5.21.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-redux": "^9.1.2",

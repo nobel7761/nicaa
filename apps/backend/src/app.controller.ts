@@ -1,5 +1,4 @@
 import { Controller, Get } from '@nestjs/common';
-
 import { AppService } from './app.service';
 
 @Controller('sample')
@@ -9,5 +8,10 @@ export class AppController {
   @Get()
   getData() {
     return this.appService.getData();
+  }
+
+  @Get('get-users')
+  getUsers() {
+    return this.appService.getUsers();
   }
 }

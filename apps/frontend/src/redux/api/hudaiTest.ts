@@ -22,7 +22,23 @@ export const hudaiApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.hudai], //provide tags means when we request the data and then we will get the data, it will cache the data
     }),
+    allUsers: build.query({
+      query: () => ({
+        url: `${HUDAI_URL}/get-users`,
+        method: 'GET',
+      }),
+      transformResponse: (
+        response: { data: { id: number; email: string; name: string }[] },
+        meta: IMeta
+      ) => {
+        return {
+          allUsers: response.data,
+          meta,
+        };
+      },
+      providesTags: [tagTypes.hudai], //provide tags means when we request the data and then we will get the data, it will cache the data
+    }),
   }),
 });
 
-export const { useHudaiQuery } = hudaiApi;
+export const { useHudaiQuery, useAllUsersQuery } = hudaiApi;
